@@ -1,0 +1,19 @@
+{
+	"rules": {
+		"indentation": [
+			1,
+			{
+				"size": "tab"
+			}
+		],
+		"leading-zero": [
+			0
+		],
+		"property-sort-order": [
+			1,
+			{
+				order: "concentric"
+			}
+		]
+	}
+}

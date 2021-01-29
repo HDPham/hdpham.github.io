@@ -1,0 +1,849 @@
+//	File Contents:
+//		1. Variables
+//		2. Mixins
+//		3. Keyframes
+//		4. Global Styles
+//		5. Header Styles
+//		6. About Styles
+//		7. Experience Styles
+//		8. Education Styles
+//		9. Project Styles
+//		10. Skills Styles
+//		11. Footer Styles
+//		12. Contact Styles
+//		13. Media Queries
+
+//	------------------------
+//	----- 1. Variables -----
+//	------------------------
+
+// Define base and accent colors
+$base-color: #3498db;
+$sail-color: #acd5f1;
+$base-color-hover: darken($base-color, 10%);
+
+// Define background colors
+$background: #fff;
+$background-alt: #f2f2f5;
+
+// Define border colors
+$border: #dcd9d9;
+
+// Define text colors
+$heading: #374054;
+$subheading: #7e8890;
+$text: #74808a;
+
+//	---------------------
+//	----- 2. Mixins -----
+//	---------------------
+
+//	------------------------
+//	----- 3. Keyframes -----
+//	------------------------
+
+@keyframes dropHeader {
+	0% {
+		transform: translateY(-100%);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+}
+
+@keyframes pulsate {
+	0% {
+		transform: scale(1, 1);
+	}
+
+	50% {
+		transform: scale(1.25, 1.25);
+	}
+
+	100% {
+		transform: scale(1, 1);
+	}
+}
+
+//	----------------------------
+//	----- 4. Global Styles -----
+//	----------------------------
+
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	border: 0;
+	padding: 0;
+
+	vertical-align: baseline;
+
+	font: inherit;
+	font-size: 100%;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: 'Lato', sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+#to-top {
+	display: inline-block;
+	position: fixed;
+	right: 2rem;
+	bottom: 2rem;
+	border: 3px solid lighten($text, 25%);
+	border-radius: 50%;
+	cursor: pointer;
+	width: 2rem;
+	height: 2rem;
+	text-align: center;
+
+	> svg {
+		animation: pulsate 1.5s ease;
+		animation-iteration-count: infinite;
+		margin-top: 0.25rem;
+		color: $text;
+	}
+}
+
+.d-inline-block {
+	display: inline-block;
+}
+
+.mt-1 {
+	margin-top: 1rem;
+}
+
+.border {
+	border: 1px solid #dee2e6;
+
+	&.border-3 {
+		border-width: 3px;
+	}
+
+	&.border-white {
+		border-color: #fff;
+	}
+
+	&.border-pill {
+		border-radius: 2rem;
+	}
+}
+
+.text-white {
+	color: #fff;
+}
+
+.shadow {
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.shadow-large {
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08), 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.heading {
+	display: inline-block;
+	position: relative;
+	margin: 0;
+	font-size: 2em;
+	font-weight: lighter;
+
+	&::after {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		margin: 0 auto;
+		background: $base-color;
+		width: 3rem;
+		height: 1px;
+		content: '';
+	}
+}
+
+.background-alt {
+	background: $background-alt;
+}
+
+//	----------------------------
+//	----- 5. Header Styles -----
+//	----------------------------
+
+#masthead {
+	position: relative;
+	background: url('../assets/images/day.min.png') center / cover;
+	padding: 7.5rem 1rem;
+}
+
+#main-nav-open {
+	display: block;
+	position: fixed;
+	top: 1rem;
+	right: 1rem;
+	z-index: 2;
+	border-radius: 4px;
+	background: $background;
+	cursor: pointer;
+	padding: 0 7px;
+	color: $base-color;
+	font-size: 1.5em;
+}
+
+#main-nav-close {
+	background: $background;
+	cursor: pointer;
+	padding-top: 10px;
+	padding-right: 15px;
+	text-align: right;
+	color: $base-color;
+	font-size: 1.5em;
+
+	span {
+		text-transform: uppercase;
+		font-size: 0.5em;
+	}
+
+	svg {
+		vertical-align: bottom;
+	}
+}
+
+#main-nav {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	animation: dropHeader 0.75s ease;
+	z-index: 3;
+	background: $background;
+	width: 100%;
+	text-align: center;
+
+	> ul {
+		display: inline-block;
+		margin: 0;
+		padding: 0.5rem;
+		width: 100%;
+
+		&.active {
+			display: block;
+		}
+	}
+
+	li {
+		display: block;
+		margin-bottom: 0.5rem;
+	}
+
+	a {
+		display: block;
+		padding: 10px;
+		color: $heading;
+
+		&:hover {
+			border-radius: 4px;
+			background: #eee;
+			text-decoration: none;
+			color: $base-color-hover;
+		}
+	}
+
+	&.active {
+		display: block;
+	}
+}
+
+#lead-content {
+	position: relative;
+	z-index: 1;
+	text-align: center;
+
+	> h1 {
+		margin: 0;
+		text-transform: uppercase;
+		line-height: 1em;
+		letter-spacing: 0.1em;
+		color: #fff;
+		font-size: 1.5em;
+	}
+
+	> div {
+		color: lighten($base-color, 25%);
+		font-size: 1rem;
+		font-weight: normal;
+	}
+
+	> a {
+		padding: 0.25rem 0.5rem;
+		font-size: small;
+		transition-property: background-color, padding, color, font-size;
+		transition-duration: 0.5s;
+
+		&:hover {
+			background: #fff;
+			color: $base-color;
+		}
+	}
+}
+
+#lead-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: rgba($base-color-hover, 0.75);
+	width: 100%;
+	height: 100%;
+}
+
+//	---------------------------
+//	----- 6. About Styles -----
+//	---------------------------
+
+#about {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	border-bottom: 1px solid $border;
+	padding: 5rem 1rem;
+
+	> :first-child {
+		flex-basis: 248px;
+		text-align: center;
+
+		h2 {
+			color: $heading;
+		}
+	}
+
+	> :last-child {
+		flex-basis: 744px;
+		margin-top: 2rem;
+
+		p {
+			margin: 0;
+			color: $text;
+		}
+	}
+}
+
+//	--------------------------------
+//	----- 7. Experience Styles -----
+//	--------------------------------
+
+#experience {
+	border-bottom: 1px solid $border;
+	padding: 3rem 1rem;
+	text-align: center;
+
+	h2 {
+		color: $heading;
+	}
+}
+
+#experience-timeline {
+	position: relative;
+	margin: 30px auto 0;
+	max-width: 1000px;
+
+	&::before {
+		position: absolute;
+		top: 0;
+		right: auto;
+		bottom: 0;
+		left: 23px;
+		z-index: 0;
+		background: $base-color;
+		width: 3px;
+		height: 100%;
+		content: '';
+	}
+
+	&::after {
+		position: absolute;
+		top: 100%;
+		left: 23px;
+		background-image: linear-gradient(
+			to bottom,
+			$base-color,
+			rgba($base-color, 0)
+		);
+		width: 3px;
+		height: 40px;
+		content: '';
+	}
+
+	> .vtimeline-point {
+		margin-top: 30px;
+	}
+
+	.vtimeline-icon {
+		position: absolute;
+		border-radius: 50%;
+		background: $base-color;
+		width: 3rem;
+		height: 3rem;
+
+		svg {
+			margin-top: 0.5rem;
+			color: #fff;
+		}
+	}
+
+	.vtimeline-block {
+		position: relative;
+		margin-left: 4rem;
+		padding-top: 0.5rem;
+		text-align: left;
+	}
+
+	.vtimeline-date {
+		font-weight: lighter;
+	}
+
+	.vtimeline-content {
+		margin-top: 0.5rem;
+		border: 1px solid #e6e6e6;
+		border-radius: 4px;
+		background: #fff;
+		padding: 1rem;
+		text-align: left;
+
+		> h3 {
+			display: inline-block;
+			margin: 0;
+			color: $heading;
+			font-size: 1.5em;
+			font-weight: 300;
+		}
+
+		> div {
+			margin: 0 0 15px;
+			color: $subheading;
+			font-size: 1.2em;
+			font-weight: 300;
+		}
+
+		> p {
+			margin: 0;
+			color: $text;
+			font-size: 0.9em;
+		}
+	}
+}
+
+//	-------------------------------
+//	----- 8. Education Styles -----
+//	-------------------------------
+
+#education {
+	border-bottom: 1px solid $border;
+	padding: 3rem 1rem;
+	text-align: center;
+
+	h2 {
+		color: $heading;
+	}
+}
+
+.education-item {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 2rem auto 0;
+	border: 1px solid $border;
+	padding: 1rem;
+	max-width: 700px;
+	text-align: left;
+
+	> h3 {
+		flex-basis: 100%;
+		margin: 0;
+		color: $heading;
+		font-weight: 500;
+	}
+
+	> .education-date {
+		flex-basis: 100%;
+		color: $text;
+	}
+
+	> .education-subheading {
+		flex-basis: 100%;
+		color: $text;
+	}
+
+	p,
+	ul {
+		color: $text;
+		font-size: 0.9em;
+	}
+
+	ul {
+		padding-left: 1rem;
+	}
+}
+
+//	-----------------------------
+//	----- 9. Project Styles -----
+//	-----------------------------
+
+#projects {
+	border-bottom: 1px solid $border;
+	padding: 3rem 1rem;
+	text-align: center;
+
+	h2 {
+		color: $heading;
+	}
+}
+
+#project-content {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+	.project {
+		flex-basis: 250px;
+		align-items: center;
+		margin: 2rem 2.5% 0;
+		border-radius: 4px;
+		background: #fff;
+		height: 250px;
+	}
+}
+
+.project-info {
+	padding: 2rem 1rem;
+
+	> h3 {
+		margin: 0;
+		color: $heading;
+		font-size: 1.5em;
+		font-weight: 300;
+	}
+
+	> p {
+		margin: 1rem 0 0;
+		color: $text;
+		font-size: 0.9em;
+	}
+
+	> a {
+		display: inline-block;
+		margin-top: 1rem;
+	}
+}
+
+//	-----------------------------
+//	----- 10. Skills Styles -----
+//	-----------------------------
+
+#skills {
+	padding: 3rem 1rem;
+	text-align: center;
+
+	> h2 {
+		color: $heading;
+	}
+
+	> ul {
+		display: block;
+		margin: 1rem auto 0;
+		padding: 0;
+		max-width: 800px;
+
+		li {
+			display: inline-block;
+			margin: 0.5rem;
+			background: darken($background-alt, 5%);
+			padding: 0.25rem 0.5rem;
+			color: $heading;
+			font-size: 1.2em;
+		}
+	}
+}
+
+//	------------------------------
+//	----- 11. Contact Styles -----
+//	------------------------------
+
+#contact {
+	// background-color: $sail-color;
+	background-color: $background-alt;
+	padding: 3rem 1rem;
+	text-align: center;
+
+	> h2 {
+		color: $heading;
+	}
+
+	> div {
+		margin-top: 2rem;
+	}
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+	}
+
+	li {
+		color: $text;
+		font-size: 1.5em;
+	}
+}
+
+form {
+	margin: 2rem auto 0;
+	max-width: 500px;
+
+	input,
+	textarea {
+		display: block;
+		transition: background-color 0.5s;
+		border-style: none;
+		border-radius: 4px;
+		background-color: $base-color;
+		padding: 10px;
+		width: 100%;
+		color: #fff;
+
+		&:focus {
+			outline: none;
+			background-color: darken($base-color, 10%);
+		}
+
+		&::placeholder {
+			color: #fff;
+		}
+	}
+
+	textarea {
+		margin-top: 0.5rem;
+		height: 150px;
+		resize: none;
+	}
+
+	button {
+		transition: box-shadow 0.5s;
+		margin-top: 0.75rem;
+		border-style: none;
+		border-radius: 4px;
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+		background: #fff;
+		cursor: pointer;
+		padding: 0.5rem;
+		width: 100%;
+		color: $base-color;
+		font-weight: 700;
+
+		&:hover {
+			box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19),
+				0 6px 6px rgba(0, 0, 0, 0.23);
+		}
+	}
+}
+
+//	-----------------------------
+//	----- 12. Footer Styles -----
+//	-----------------------------
+
+footer {
+	display: flex;
+	justify-content: center;
+	padding: 3rem;
+	text-align: center;
+
+	> div {
+		flex-basis: 25%;
+	}
+}
+
+.copyright {
+	color: $text;
+}
+
+.social {
+	> ul {
+		margin: 0;
+		padding: 0;
+	}
+
+	li {
+		display: inline-block;
+	}
+
+	a {
+		color: $text;
+
+		&:hover {
+			color: $base-color;
+		}
+	}
+}
+
+//	-----------------------------
+//	----- 13. Media Queries -----
+//	-----------------------------
+
+// X-Small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+	#lead-content {
+		> h1 {
+			font-size: 2em;
+		}
+
+		> div {
+			font-size: 1.25rem;
+		}
+
+		> a {
+			padding: 0.375rem 0.75rem;
+			font-size: medium;
+		}
+	}
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+	#main-nav-open,
+	#main-nav-close {
+		display: none;
+	}
+
+	#masthead {
+		> nav {
+			display: block;
+			position: absolute;
+			right: 0;
+			background: $base-color;
+
+			> ul {
+				width: auto;
+			}
+
+			li {
+				display: inline-block;
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	#lead-content {
+		> h1 {
+			font-size: 3em;
+		}
+
+		> div {
+			font-size: 1.75rem;
+		}
+
+		> a {
+			padding: 0.5rem 1rem;
+		}
+	}
+
+	#about {
+		padding: 5rem 0;
+	}
+
+	.education-item {
+		> h3 {
+			flex-basis: 50%;
+		}
+
+		> .education-date {
+			flex-basis: 50%;
+			text-align: right;
+		}
+	}
+
+	.copyright {
+		text-align: left;
+	}
+
+	.social {
+		text-align: right;
+	}
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+	#masthead {
+		height: 100vh;
+		min-height: 500px;
+	}
+
+	#about {
+		> :first-child {
+			text-align: left;
+		}
+
+		> :last-child {
+			margin-top: 0;
+		}
+	}
+
+	#lead-content {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+		> h1 {
+			font-size: 5em;
+		}
+
+		> div {
+			font-size: 2.5rem;
+		}
+	}
+
+	#experience-timeline {
+		&::before,
+		&::after {
+			left: 303px;
+		}
+
+		.vtimeline-icon {
+			margin-left: 280px;
+		}
+
+		.vtimeline-block {
+			margin-left: 0;
+			padding-top: 0;
+		}
+
+		.vtimeline-date {
+			position: absolute;
+			top: 1rem;
+		}
+
+		.vtimeline-content {
+			margin-left: 350px;
+		}
+	}
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {
+}
