@@ -17,7 +17,8 @@
 		<link rel="icon" href="favicon.ico" />
 
 		<!-- CSS -->
-		<link rel="stylesheet" href="css/style.min.css" />
+		<link rel="stylesheet" href="css/style.min.css">
+
 	</head>
 	<body>
 		<div id="main-nav-open" class="shadow-large">
@@ -44,7 +45,7 @@
 				<div>Website Developer</div>
 				<a
 					rel="noreferrer noopener"
-					href="https://drive.google.com/file/d/1JL23Qn1pOFjnShcujpCKzrfHeUAholP3/view?usp=sharing"
+					href="https://drive.google.com/file/d/1ifp0qnhrAWQ27cHkpRP7udYoPt0IZ2uG/view?usp=sharing"
 					target="_blank"
 					class="d-inline-block mt-1 border border-3 border-white border-pill text-white"
 					>Resume</a
@@ -70,12 +71,12 @@
 		</section>
 		<!-- End #about -->
 
-		<section id="experience" class="background-alt">
+		<section id="experience" class="border-top background-alt">
 			<h2 class="heading">Experience</h2>
 			<div id="experience-timeline">
 				<div class="vtimeline-point">
 					<div class="vtimeline-icon">
-						<i class="fa fa-map-marker fa-2x"></i>
+						<i class="fa-solid fa-location-dot fa-2x"></i>
 					</div>
 					<div class="vtimeline-block">
 						<div class="vtimeline-date">
@@ -94,11 +95,31 @@
 						</div>
 					</div>
 				</div>
+				<div class="vtimeline-point">
+					<div class="vtimeline-icon">
+						<i class="fa-solid fa-location-dot fa-2x"></i>
+					</div>
+					<div class="vtimeline-block">
+						<div class="vtimeline-date">
+							April 2021 – January 2022
+						</div>
+						<div class="vtimeline-content">
+							<h3>FragranceX.com</h3>
+							<div>Jr. Software Developer</div>
+							<p>
+								Worked as a Jr. Software Developer for a
+								perfume/cologne eccomerce company. Primarily
+								used C# and its framework for the website and
+								inhouse applications.
+							</p>
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
 		<!-- End #experience -->
 
-		<section id="education">
+		<section id="education" class="border-top">
 			<h2 class="heading">Education</h2>
 			<div class="education-item">
 				<h3>University of Illinois Urbana-Champaign</h3>
@@ -111,17 +132,35 @@
 		</section>
 		<!-- End #education -->
 
-		<section id="projects" class="background-alt">
+		<section id="projects" class="border-top background-alt">
 			<h2 class="heading">Projects</h2>
 			<div id="project-content">
+				<div class="project shadow-large">
+					<!-- End .project-image -->
+					<div class="project-info">
+						<h3>Watch Party</h3>
+						<p>
+							A synchronized video website that lets users watch
+							YouTube videos together and chat in rooms.
+						</p>
+						<a
+							rel="noreferrer noopener"
+							href="https://github.com/HDPham/watchparty"
+							target="_blank"
+							>View Project</a
+						>
+					</div>
+					<!-- End .project-info -->
+				</div>
+				<!-- End .project -->
+
 				<div class="project shadow-large">
 					<!-- End .project-image -->
 					<div class="project-info">
 						<h3>ImBoard</h3>
 						<p>
 							A multiplayer React website emulating board/card
-							games with multi-room system, room-specific chat,
-							and turn-based multiplayer design.
+							games with room and chat capabilities.
 						</p>
 						<a
 							rel="noreferrer noopener"
@@ -160,8 +199,8 @@
 					<div class="project-info">
 						<h3>Vietnamese Student Association Website</h3>
 						<p>
-							A React website for a college student organization
-							using HTML, CSS, and JavaScript.
+							A static React website for a college student
+							organization.
 						</p>
 						<a
 							rel="noreferrer noopener"
@@ -199,7 +238,7 @@
 					<div class="project-info">
 						<h3>Anime Website Template</h3>
 						<p>
-							A humorous website template filled with anime
+							A humorous static website template filled with anime
 							references.
 						</p>
 						<a
@@ -216,7 +255,7 @@
 		</section>
 		<!-- End #projects -->
 
-		<section id="skills">
+		<section id="skills" class="border-top">
 			<h2 class="heading">Skills</h2>
 			<ul>
 				<li>HTML</li>
@@ -230,11 +269,11 @@
 		</section>
 		<!-- End #skills -->
 
-		<section id="contact">
+		<section id="contact" class="border-top">
 			<h2 class="heading">Contact</h2>
 			<div>
 				<ul>
-					<li>Email <br />hdpham1370@gmail.com</li>
+					<li>Email <br />hpham@proton.me</li>
 				</ul>
 			</div>
 			<!-- <form method="POST" action="">
@@ -260,7 +299,7 @@
 		</section>
 		<!-- End #contact -->
 
-		<footer>
+		<footer class="border-top">
 			<div class="copyright">Copyright &copy; 2021 Hung Pham</div>
 			<div class="social">
 				<ul>
@@ -294,5 +333,6 @@
 			crossorigin="anonymous"
 		></script>
 		<script src="js/script.min.js"></script>
+
 	</body>
 </html>
