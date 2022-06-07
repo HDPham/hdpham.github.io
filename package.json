@@ -4,7 +4,8 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"deploy": "gh-pages -d dist"
+		"deploy": "gh-pages -d dist",
+		"build": "gulp"
 	},
 	"keywords": [],
 	"author": "Hung Pham <hdpham1370@gmail.com>",
@@ -16,10 +17,12 @@
 		"gulp": "^4.0.2",
 		"gulp-autoprefixer": "^7.0.1",
 		"gulp-babel": "^8.0.0",
+		"gulp-html-replace": "^1.6.2",
 		"gulp-imagemin": "^7.1.0",
 		"gulp-rename": "^2.0.0",
-		"gulp-sass": "^4.1.0",
+		"gulp-sass": "^5.1.0",
 		"gulp-uglify": "^3.0.2",
-		"sass-lint": "^1.13.1"
+		"sass": "^1.52.2",
+		"sass-lint": "^1.13.0"
 	}
 }

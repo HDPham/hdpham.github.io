@@ -1,13 +1,19 @@
 const gulp = require('gulp');
 const rename = require('gulp-rename');
-const sass = require('gulp-sass');
+const htmlreplace = require('gulp-html-replace');
+const sass = require('gulp-sass')(require('sass'));
 const autoprefixer = require('gulp-autoprefixer');
 const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
 const imagemin = require('gulp-imagemin');
 
 // Move html to dist
-gulp.task('html', () => gulp.src('*.html').pipe(gulp.dest('dist')));
+gulp.task('html', () =>
+	gulp
+		.src('*.html')
+		.pipe(htmlreplace({ css: 'css/style.min.css', js: 'js/script.min.js' }))
+		.pipe(gulp.dest('dist'))
+);
 
 // Convert scss to css
 gulp.task('scss', () =>

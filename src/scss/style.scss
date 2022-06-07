@@ -142,6 +142,10 @@ a {
 	}
 }
 
+.border-top {
+	border-top: 1px solid $border;
+}
+
 .text-white {
 	color: #fff;
 }
@@ -316,7 +320,6 @@ a {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	border-bottom: 1px solid $border;
 	padding: 5rem 1rem;
 
 	> :first-child {
@@ -344,7 +347,6 @@ a {
 //	--------------------------------
 
 #experience {
-	border-bottom: 1px solid $border;
 	padding: 3rem 1rem;
 	text-align: center;
 
@@ -449,7 +451,6 @@ a {
 //	-------------------------------
 
 #education {
-	border-bottom: 1px solid $border;
 	padding: 3rem 1rem;
 	text-align: center;
 
@@ -500,7 +501,6 @@ a {
 //	-----------------------------
 
 #projects {
-	border-bottom: 1px solid $border;
 	padding: 3rem 1rem;
 	text-align: center;
 
